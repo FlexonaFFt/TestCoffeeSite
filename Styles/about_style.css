@@ -1,0 +1,433 @@
+/* Прописываю основные свойства */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .body {
+      width: 1440px;
+      height: 100%;
+      cursor: none;
+  }
+  
+  /* Прописываю гамбургер меню */
+  
+  .container {
+    max-width: 1440px;
+    width: 90%;
+    margin: auto;
+    font-family: "Montserrat";
+  }
+  
+  .navbar {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+  }
+  
+  .navbar .menu-items {
+    display: flex;
+  }
+  
+  .navbar .nav-container li {
+    list-style: none;
+  }
+  
+  .navbar .nav-container a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.7rem;
+  }
+  
+  .navbar .nav-container a:hover{
+      font-weight: bolder;
+  }
+  
+  .nav-container {
+    display: block;
+    position: relative;
+    height: 60px;
+  }
+  
+  .nav-container .checkbox {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .nav-container .hamburger-lines {
+    display: block;
+    height: 26px;
+    width: 32px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .nav-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #000;
+  }
+  
+  .nav-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .nav-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .nav-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .navbar .menu-items {
+    padding-top: 120px;
+    box-shadow: inset 0 0 2000px rgb(255, 255, 255);
+    height: 100vh;
+    width: 100%;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
+  }
+  
+  .navbar .menu-items li {
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    z-index: 2;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #000;
+    z-index: 2;
+    display: none;
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .logo{
+    display: none;
+  }
+
+ /* Прописываю стили главного блока страницы */
+
+ .main_site_block {
+    width: 434px;
+    height: 498px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 201px;
+    right: 163px;
+}
+
+.main_site_block .main_text_container .zagolovok {
+    width: 434px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.main_site_block .main_text_container .lorem_second_txt {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.main_site_block .main_text_container .lorem_third_txt {
+    color: #000;
+    font-family: Inter Tight;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.main_site_first_image_block {
+    width: 660px;
+    height: 553px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 173px;
+    left: 163px;
+    object-fit: contain;
+}
+
+.about {
+    display: flex;
+    width: 1440px;
+    padding: 100px 120px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: absolute;
+    top: 900px;
+}
+
+.about .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    align-self: stretch;
+    position: absolute;
+    top: 100px;
+}
+
+.about .content .txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.about .content .txt .zag {
+    width: 1200px;
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+
+    /* Display/Bold/XL */
+    font-family: Inter Tight;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px; /* 100% */
+    margin-bottom: 40px;
+}
+
+.about .content .txt .text {
+    width: 520px;
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+
+    /* Text/Regular/M */
+    font-family: Inter Tight;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    position: absolute;
+    top: 100px;
+    left: 335px;
+}
+
+.about .content .faq {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    gap: 20px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    top: 64px;
+}
+
+.about .content .faq .item {
+    display: flex;
+    min-width: 387px;
+    max-width: 590px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    position: absolute;
+    top: 275px;
+    width: 500px;
+}
+
+.about .content .faq .item .first {
+    position: absolute;
+    left: 163px;
+    text-align: left;
+}
+
+.about .content .faq .item .zagolovok {
+    align-self: stretch;
+    color: #000;
+
+    /* Display/Bold/M */
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+}
+
+.about .content .faq .item .text2 {
+    align-self: stretch;
+    color: #000;
+
+    /* Text/Regular/M */
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}
+
+.about .content .faq .second {
+    position: absolute;
+    width: 500px;
+    right: 1px;
+    text-align: right;
+}
+
+.about .content .faq .third {
+    position: absolute;
+    width: 500px;
+    text-align: left;
+    top: 550px;
+}
+
+.about .content .faq .four {
+    position: absolute;
+    width: 500px;
+    right: 1px;
+    text-align: right;
+    top: 550px;
+}
+
+.about .content .faq .five {
+    position: absolute;
+    width: 500px;
+    text-align: left;
+    top: 810px;
+}
+
+.about .content .faq .six {
+    position: absolute;
+    width: 500px;
+    right: 1px;
+    text-align: right;
+    top: 810px;
+}
+
+/* Прописываю стили для футера */
+
+.footer {
+    display: flex;
+    width: 1440px;
+    padding: 100px 120px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    top: 1150px;
+    left: 0px;
+    border-top: 1px solid var(--Neutral-border, #D7DAE2);
+    background: var(--Neutral-default, #FFF);
+}
+
+.footer .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer .footer_logo {
+    color: var(--Neutral-primary, #000);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Text/Bold/M */
+    font-family: Inter Tight;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+}
+
+.footer .link_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-style: normal;
+    cursor: auto;
+    font-weight: 500;
+}
+
+.footer .link_menu li, a {
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    font-weight: 500;
+}
+
+.footer .aut {
+    color: var(--Neutral-secondary, #555A65);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Text/Regular/S */
+    font-family: Inter Tight;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}

@@ -1,0 +1,599 @@
+/* Прописываю основные свойства */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+    width: 1440px;
+    height: 100%;
+    cursor: none;
+}
+
+/* Прописываю гамбургер меню */
+
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: auto;
+  font-family: "Montserrat";
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.navbar .menu-items {
+  display: flex;
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 120px;
+  box-shadow: inset 0 0 2000px rgb(255, 255, 255);
+  height: 100vh;
+  width: 100%;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2rem;
+  color: #000;
+  z-index: 2;
+  display: none;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+  display: none;
+}
+
+/* Прописываю стили главного блока страницы */
+
+.main_site_block {
+    width: 434px;
+    height: 553px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 173px;
+    left: 163px;
+}
+
+.main_site_block .main_text_container .zagolovok {
+    width: 434px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.main_site_block .main_text_container .lorem_second_txt {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.main_site_block .main_text_container .lorem_third_txt {
+    color: #000;
+    font-family: Inter Tight;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.main_site_block .main_text_container .main_readmore_button {
+    width: 434px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    transition: background-color 0.3;
+}
+
+.main_site_block .main_text_container .main_readmore_button a{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Montserrat;
+    line-height: normal;
+    color: #ffffff;
+    transition: color 0.3s;
+    width: 434px;
+    height: 40px;
+    text-align: center;
+    line-height: 2;
+}
+
+.main_site_block .main_text_container .main_readmore_button:hover {
+  background-color: #FFF;
+}
+
+.main_site_block .main_text_container .main_readmore_button a:hover {
+  color: #000;
+}
+
+.main_site_firs_image_block {
+    width: 660px;
+    height: 553px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 173px;
+    right: 163px;
+    object-fit: contain;
+}
+
+/* Прописываю стили контента главной страницы */
+
+.main_content_block .main_content_txt {
+    position: absolute;
+    top: 956px;
+    left: 163px;
+    display: flex;
+    width: 1114px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.main_content_block .main_content_txt .txt_title {
+    min-width: 400px;
+    max-width: 488px;
+    align-self: stretch;
+
+    color: #000;
+
+    /* Display/Bold/XL */
+  font-family: "Montserrat";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px; /* 100% */
+}
+
+.main_content_block .txt {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.main_content_block .txt .left_txt {
+    min-width: 488px;
+    max-width: 488px;
+    flex: 1 0 0;
+    color: #000;
+    font-family: 'Inter Tight';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.main_content_block .txt .right_txt {
+    min-width: 510px;
+    max-width: 590px;
+    color: #000;
+    font-family: 'Inter Tight';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.first_image {
+    width: 434px;
+    height: 500px;
+    flex-shrink: 0;
+    object-fit: cover;
+    position: absolute;
+    left: 163px;
+    top: 1234px;
+}
+
+.first_image_content .first_image_txt {
+    width: 552px;
+    height: 240px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 730px;
+    top: 1424px;
+}
+
+.first_image_content .first_image_txt .txt_zag {
+    color: #000;
+    text-align: right;
+    font-family: "Montserrat";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 68.571% */
+    margin-bottom: 24px;
+}
+
+.first_image_content .first_image_txt .txt_text {
+    color: #000;
+    text-align: right;
+    font-family: Inter Tight;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 160% */
+}
+
+.second_image {
+    width: 434px;
+    height: 500px;
+    flex-shrink: 0;
+    position: absolute;
+    object-fit: cover;
+    right: 163px;
+    top: 1734px;
+}
+
+.second_image_content .second_image_txt {
+    width: 547px;
+    height: 240px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 163px;
+    top: 1864px;
+}
+
+.second_image_content .second_image_txt .txt_zag {
+    color: #000;
+    font-family: "Montserrat";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 68.571% */
+    margin-bottom: 24px;
+}
+
+.second_image_content .second_image_txt .txt_text {
+    color: #000;
+    font-family: Inter Tight;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 160% */
+}
+
+.third_image {
+    width: 434px;
+    height: 500px;
+    flex-shrink: 0;
+    object-fit: cover;
+    position: absolute;
+    left: 163px;
+    top: 2234px;
+}
+
+.third_image_content .third_image_txt {
+    width: 552px;
+    height: 240px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 730px;
+    top: 2364px;
+}
+
+.third_image_content .third_image_txt .txt_zag {
+    color: #000;
+    text-align: right;
+    font-family: "Montserrat";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 68.571% */
+    margin-bottom: 24px;
+}
+
+.third_image_content .third_image_txt .txt_text {
+    color: #000;
+    text-align: right;
+    font-family: Inter Tight;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 160% */
+}
+
+/* Прописываю стили блока призыва */
+
+.main_call_to_action {
+    width: 1440px;
+    height: 474px;
+    position: absolute;
+    top: 2800px;
+}
+
+.main_call_to_action .content {
+    display: flex;
+    width: 1114px;
+    padding: 60px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 163px;
+    top: 79px;
+    background: var(--Neutral-system, #DEDEDE);
+    border-radius: 24px;
+}
+
+.main_call_to_action .content .zagolovok {
+    min-width: 420px;
+    max-width: 570px;
+    flex: 1 0 0;
+    color: #000;
+
+    /* Display/Bold/XL */
+    font-family: "Montserrat";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px; /* 100% */
+}
+
+.main_call_to_action .txt {
+    display: flex;
+    min-width: 420px;
+    padding-top: 10px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 28px;
+    flex: 1 0 0;
+    flex-wrap: wrap;
+}
+
+.main_call_to_action .txt .txt_text {
+    min-width: 420px;
+    max-width: 600px;
+    flex: 1 0 0;
+    color: #000;
+
+    /* Text/Regular/M */
+    font-family: Inter Tight;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}
+
+.main_call_to_action .call_to_action_button .action_button_text {
+  width: 434px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  transition: background-color 0.3;
+}
+
+.main_call_to_action .call_to_action_button .action_button_text a{
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Montserrat;
+  line-height: normal;
+  color: #ffffff;
+  transition: color 0.3s;
+  width: 434px;
+  height: 40px;
+  text-align: center;
+  line-height: 2;
+}
+
+.main_call_to_action .call_to_action_button .action_button_text:hover {
+background-color: #FFF;
+}
+
+.main_call_to_action .call_to_action_button .action_button_text a:hover {
+color: #000;
+}
+
+.main_call_to_action .button_config .call_to_action_button .action_button_text {
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Text/Bold/S */
+    font-family: Inter Tight;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 142.857% */
+}
+
+/* Прописываю стили для футера */
+
+.footer {
+    display: flex;
+    width: 1440px;
+    padding: 100px 120px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    top: 3274px;
+    border-top: 1px solid var(--Neutral-border, #D7DAE2);
+    background: var(--Neutral-default, #FFF);
+}
+
+.footer .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer .footer_logo {
+    color: var(--Neutral-primary, #000);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Text/Bold/M */
+    font-family: Inter Tight;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+}
+
+.footer .link_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-style: normal;
+    cursor: auto;
+    font-weight: 500;
+}
+
+.footer .link_menu li, a {
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    font-weight: 500;
+}
+
+.footer .aut {
+    color: var(--Neutral-secondary, #555A65);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Text/Regular/S */
+    font-family: Inter Tight;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
